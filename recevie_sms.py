@@ -13,7 +13,7 @@ def incoming_sms():
     lst4 = ["stressed","overwhelmed","nervous","confused"]
     lst5 = ["lonely","dejected","isolated"]
     lst6 = ["mad","angry"]
-    lst7 = ["sleepy","tired","bored",""]
+    lst7 = ["sleepy","tired","bored"]
     lst_ans = ["done1", "done2","done3","done4", "done5"]
     correct_ans = ["first aid", "nothing", "history","i understand","maid"]
     body = body.lower()
