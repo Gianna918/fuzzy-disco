@@ -13,9 +13,9 @@ def incoming_sms():
     lst4 = ["stressed","overwhelmed","nervous","confused"]
     lst5 = ["lonely","dejected","isolated"]
     lst6 = ["mad","angry"]
-    lst7 = ["sleepy","tired","bored"]
+    lst7 = ["sleepy","tired","bored",""]
     lst_ans = ["done1", "done2","done3","done4", "done5"]
-    correct_ans = ["first aid", "nothing", "history",""]
+    correct_ans = ["first aid", "nothing", "history","i understand","maid"]
     body = body.lower()
     body = body.strip()
     if body in lst2:
@@ -68,21 +68,23 @@ def incoming_sms():
             msg = resp.message("Please input answer (no special symbols requires and make sure word is spelled correctly): \n If you give up type done1")
             msg.media("http://brainden.com/images/aid-rebus-puzzle.gif")
         elif random.randint(0,y) == 1:
-             msg = resp.message("Please input answer (no special symbols requires and make sure word is spelled correctly): \n If you give up type done2")
+            msg = resp.message("Please input answer (no special symbols requires and make sure word is spelled correctly): \n If you give up type done2")
             msg = resp.message("It is greater than God and more evil than the devil. The poor have it, the rich need it and if you eat it you’ll die. What is it?")
 
         elif random.randint(0,y) == 2:
-             msg = resp.message("Please input answer (no special symbols requires and make sure word is spelled correctly): \n If you give up type done3")
+            msg = resp.message("Please input answer (no special symbols requires and make sure word is spelled correctly): \n If you give up type done3")
             msg = resp.message("You will always find me in the past. I can be created in the present, But the future can never taint me. What am I?")
         elif random.randint(0,y) == 3:
-            msg = resp.message()
-            msg.media()
+            msg = resp.message("Please input answer (no special symbols requires and make sure word is spelled correctly): \n If you give up type done4")
+            msg.media("https://3.bp.blogspot.com/-Ek0IAiZ3zTk/VZgWAswOlSI/AAAAAAAAOL0/HHSQLvB3nCk/s320/Rebus.png")
         else:
-            msg = resp.message()
-            msg.media()
+            msg = resp.message("Please input answer (no special symbols requires and make sure word is spelled correctly and is one word): \n If you give up type done5")
+            msg = resp.message("A man is found dead on a Sunday morning. His wife calls the police immediately. The police question the wife and staff. The wife said she was asleep, the cook said he was cooking breakfast, the gardener said she was picking vegetables, the butler said he was cleaning the closet, and the maid said she was getting the post. The police immediately arrested the murderer.Who was the murderer?")
+        
     elif body in correct_ans:
         msg = resp.message("Correct")
-        body = "tired"
+        msg = resp.message("Type 'bored' (no apostraphes) for another puzzle. Note: puzzles might be repeated.")
+        
 
     elif body in lst_ans:
         if lst_ans[0] == body:
@@ -92,23 +94,10 @@ def incoming_sms():
         elif lst_ans[2] == body:
             msg = resp.message("history")
         elif lst_ans[3] == body:
-            msg = resp.message("nothing")
-        elif lst_ans[4] == body:
-            msg = resp.message("nothing")
+            msg = resp.message("i understand")
         else:
-
-
-
-
-
-
-
-
-
-
-
-
-
+            msg = resp.message("maid")
+        msg = resp.message("Type 'bored' (no apostraphes) for another puzzle. Note: puzzles might be repeated.")
 
 
 
