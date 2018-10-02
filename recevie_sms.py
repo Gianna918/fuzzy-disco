@@ -7,18 +7,18 @@ app = Flask(__name__)
 def incoming_sms():
     body = request.values.get('Body', None )
     resp = MessagingResponse()
-    lst1 = ["sad","unhappy","depressed","dissapointed","embarassed"]
-    lst2 = ["happy","excited","joyful","cheerful","glad","ecstatic", "calm"]
-    lst3 = ["scared","frightened","afraid","terrified","petrified"]
-    lst4 = ["stressed","overwhelmed","nervous","confused"]
-    lst5 = ["lonely","dejected","isolated"]
-    lst6 = ["mad","angry"]
-    lst7 = ["sleepy","tired","bored"]
+    sadness = ["sad","unhappy","depressed","dissapointed","embarassed"]
+    happiness = ["happy","excited","joyful","cheerful","glad","ecstatic", "calm"]
+    fear = ["scared","frightened","afraid","terrified","petrified"]
+    stress = ["stressed","overwhelmed","nervous","confused"]
+    lonely = ["lonely","dejected","isolated"]
+    anger = ["mad","angry"]
+    tired = ["sleepy","tired","bored"]
     lst_ans = ["done1", "done2","done3","done4", "done5"]
     correct_ans = ["first aid", "nothing", "history","i understand","maid"]
     body = body.lower()
     body = body.strip()
-    if body in lst2:
+    if body in happiness:
         if random.randint(0,1)==0:  
             msg = resp.message("What a wonderful phrase!")
             msg.media("https://i1.wp.com/heisenbergreport.com/wp-content/uploads/2017/06/hakuna.png?fit=634%2C363&ssl=1")
@@ -26,35 +26,35 @@ def incoming_sms():
             msg = resp.message("Always smile!")
             msg.media("https://images-na.ssl-images-amazon.com/images/I/81IXBCQbTFL._SX355_.jpg")
 
-    elif body in lst3:
+    elif body in fear:
         if random.randint(0,1) == 0:
             msg = resp.message("Be Strong!")
             msg.media("https://i.pinimg.com/736x/ed/91/fc/ed91fc88684313500c520ab6c1a81091--sad-disney-quotes-motivational-disney-quotes.jpg")
         else:
             msg = resp.message("Don't give up!")
             msg.media("https://i.pinimg.com/736x/b9/10/0a/b9100ab2fe6cb05c241d5c5f5b18ae32.jpg")
-    elif body in lst5:
+    elif body in lonely:
         if random.randint(0,1)==0:
             msg = resp.message("You're not alone!")
             msg.media("https://pbs.twimg.com/media/BpJZsndCcAAwf7Z.jpg")
         else:
             msg = resp.message("We have all been there, just plow through it! It gets better!")
             msg.media("http://emilysquotes.com/wp-content/uploads/2015/07/Remember-the-time-you-feel-lonely-is-the-time-you-most-need-to-be-by-yourself.-Life%E2%80%99s-cruelest-irony..jpg")
-    elif body in lst1:
+    elif body in sadness:
         if random.randint(0,1) ==0:
             msg = resp.message("Listen to music, go out for a walk, and/or binge watch a show! Make it a YOU day!")
             msg.media("http://bridgesofhope.com.ph/wp-content/uploads/positive-coping-mechanisms.jpg")
         else: 
             msg = resp.message("Don't feel sad get glad.")
             msg.media("https://i.pinimg.com/736x/a6/33/55/a63355bfafe4841f5909276d0cffc819--funny-inspirational-quotes-cute-text-quotes.jpg")
-    elif body in lst4:
+    elif body in stress:
         if random.randint(0,1)==1:
             msg = resp.message("Calm down and take it slow and steady")
             msg.media("https://i.pinimg.com/originals/af/8b/99/af8b99269855eca4ff0e9ca7eda39afb.jpg")
         else:
             msg = resp.message("Be organized and manage your time wisely")
             msg.media("http://cdn2.bigcommerce.com/server2100/da4a7/products/489/images/119/Keep-Calm-and-Carry-On-Navy-Blue-Poster-Front__69597.1319984235.1280.1280.jpg?c=2")
-    elif body in lst6:
+    elif body in anger:
         if random.randint(0,1)==0:
             msg = resp.message()
             msg.media("https://i.pinimg.com/736x/40/4e/75/404e75940404ebc91d45eff64415f3f5--anger-quotes-quotes-positive.jpg")
@@ -62,7 +62,7 @@ def incoming_sms():
             msg = resp.message()
             msg.media("https://i.pinimg.com/736x/dd/71/b7/dd71b7aa20313f9d86846d597e7e1bfe--anger-quotes-control-quotes-anger.jpg")
         
-    elif body in lst7:
+    elif body in tired:
         y = 4
         if random.randint(0,y)==0:
             msg = resp.message("Please input answer (no special symbols requires and make sure word is spelled correctly): \n If you give up type done1")
