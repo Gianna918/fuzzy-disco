@@ -3,10 +3,12 @@ from twilio.twiml.messaging_response import MessagingResponse
 import random 
 app = Flask(__name__)
 
+# main function
 @app.route("/sms", methods=['GET','POST'])
 def incoming_sms():
     body = request.values.get('Body', None )
     resp = MessagingResponse()
+    # a list of emotions users might be feeling 
     lst1 = ["sad","unhappy","depressed","dissapointed","embarassed"]
     lst2 = ["happy","excited","joyful","cheerful","glad","ecstatic", "calm"]
     lst3 = ["scared","frightened","afraid","terrified","petrified"]
