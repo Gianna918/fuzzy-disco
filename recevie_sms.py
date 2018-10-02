@@ -18,6 +18,8 @@ def incoming_sms():
     correct_ans = ["first aid", "nothing", "history","i understand","maid"]
     body = body.lower()
     body = body.strip()
+    # repeatedly check if the users input is in one of the lists
+    # and return a corresponding message if it is
     if body in lst2:
         if random.randint(0,1)==0:  
             msg = resp.message("What a wonderful phrase!")
