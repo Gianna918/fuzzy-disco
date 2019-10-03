@@ -121,6 +121,7 @@ def incoming_sms():
     print(body)
     return str(resp)
     
+# function to run code          
 if __name__ == "__main__":
     app.run(debug = True)
 
