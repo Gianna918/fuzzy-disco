@@ -7,7 +7,7 @@ app = Flask(__name__)
 def incoming_sms():
     body = request.values.get('Body', None )
     resp = MessagingResponse()
-    lst1 = ["sad","unhappy","depressed","dissapointed","embarassed"]
+    lst1 = ["sad","unhappy","depressed","dissapointed","embarassed", "cool"]
     lst2 = ["happy","excited","joyful","cheerful","glad","ecstatic", "calm"]
     lst3 = ["scared","frightened","afraid","terrified","petrified"]
     lst4 = ["stressed","overwhelmed","nervous","confused"]
