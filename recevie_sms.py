@@ -16,8 +16,7 @@ def incoming_sms():
     lst7 = ["sleepy","tired","bored"]
     lst_ans = ["done1", "done2","done3","done4", "done5"]
     correct_ans = ["first aid", "nothing", "history","i understand","maid"]
-    body = body.lower()
-    body = body.strip()
+    body = body.lower().strip()
     if body in lst2:
         if random.randint(0,1)==0:  
             msg = resp.message("What a wonderful phrase!")
